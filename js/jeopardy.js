@@ -1,10 +1,34 @@
+$(document).ready(function(){
+	$('textarea.edit').autogrow();
+	
+	$('textarea.edit').focus(function(){
+		$(this).addClass('active');
+		var val = $(this).val();
+		if(val == "Enter Category" || val == "Enter Title")
+            setTimeout(this.select.bind(this), 1);
+		
+	})
+	
+	$('textarea.edit').blur(function(){
+		$(this).removeClass('active');
+	})	
+	
+		$('.clean').mouseover(function(){
+			$(this).addClass('ie-hack')
+		})
+		
+		$('.clean').mouseout(function(){
+			$(this).removeClass('ie-hack')
+		})	
+});
+
 var game = {}
 game.init = function()
 {
     $('#game').fadeIn(1000);
-    $('#options').hide()
-    $('#stats').show()
-    game.team_cnt = $('#teams').val()
+    $('#options').hide();
+    $('#stats').show();
+    game.team_cnt = $('#teams').val();
     game.createScoreboard()
         game.current_points = 0;
 }
@@ -33,9 +57,8 @@ game.addPoints = function(team)
     
     $('#team' + team).html(points);
     $(('#t' + game.current_questionID)).addClass("dirty");
-
-    $(('#t' + game.current_questionID)).unbind('mouseover')
-    $(('#t' + game.current_questionID)).unbind('mouseout')	
+    $(('#t' + game.current_questionID)).unbind('mouseover');
+    $(('#t' + game.current_questionID)).unbind('mouseout');
 }
 
 game.subtractPoints = function(team)
@@ -44,22 +67,22 @@ game.subtractPoints = function(team)
     
     $('#team' + team).html(points);
     $(('#t' + game.current_questionID)).addClass("dirty");	
-    $(('#t' + game.current_questionID)).unbind('mouseover')
-    $(('#t' + game.current_questionID)).unbind('mouseout')	
+    $(('#t' + game.current_questionID)).unbind('mouseover');
+    $(('#t' + game.current_questionID)).unbind('mouseout');	
 }
 
 var prompt = {}
 prompt.show = function(questionID, points)
 {
-    game.current_points = points
-    game.current_questionID = questionID
-    $('#question').hide()
-    $('#game').hide()
-    $('#prompt').fadeIn(1000)
-    $('#question').html($('#' + questionID).html())
-    $('#answer').html($('#a' + questionID).html())
+    game.current_points = points;
+    game.current_questionID = questionID;
+    $('#question').hide();
+    $('#game').hide();
+    $('#prompt').fadeIn(1000);
+    $('#question').html($('#' + questionID).html());
+    $('#answer').html($('#a' + questionID).html());
     if($('#question').html().length == 0)
-        $('#correct-response').hide()
+        $('#correct-response').hide();
     else
         $('#correct-response').show();
 }
@@ -72,5 +95,5 @@ prompt.hide = function()
 
 prompt.showQuestion = function()
 {
-    $('#question').fadeIn(1000)
+    $('#question').fadeIn(1000);
 }
