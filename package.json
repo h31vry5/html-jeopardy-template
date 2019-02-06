@@ -1,0 +1,33 @@
+{
+  "name": "html-jeopardy",
+  "version": "1.0.0",
+  "description": "Jeopardy powered by HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h31vry5/html-jeopardy-template.git"
+  },
+  "keywords": [
+    "html",
+    "jeopardy",
+    "css",
+    "js"
+  ],
+  "author": "Henry Park",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/h31vry5/html-jeopardy-template/issues"
+  },
+  "homepage": "https://github.com/h31vry5/html-jeopardy-template#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
