@@ -19,6 +19,7 @@ $(document).ready(function () {
 
 var game = {};
 game.init = function () {
+    createGame();
     $("#game").fadeIn(1000);
     $("#options").hide();
     $("#stats").show();
@@ -81,3 +82,9 @@ prompt.hide = function () {
 prompt.showQuestion = function () {
     $("#question").fadeIn(1000);
 };
+
+/*My Shit*/
+
+function createGame(){
+    
+}
